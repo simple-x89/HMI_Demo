@@ -1,0 +1,476 @@
+﻿Version     0.0
+Platform    Gen4-uLCD-43DCT-CLB-L
+PlatRes     272x480
+Depends
+end
+Options
+    Genie
+    Speed                        256000
+    Checksum                     No
+    ResponseSize                 2
+    Multidrop                    No
+    Destination                  0
+    DestBank                     0
+    MainForm                     1
+    SndBuf                       0
+    ButtonDisable                No
+    SignedDigits                 No
+    MaxString                    75
+    ComPort                      1
+    ComTX1pinIdx                 2
+    ComRX1pinIdx                 10
+    FileSystem                   FATfs
+    FlashEraseOption             Optimal
+    SPIenable                    0
+    SPIsdo                       3
+    SPIsdi                       2
+    SPIsck                       1
+    FlashGT16MB                  No
+end
+Form
+    Name                         Form0
+    Alias                        Form0
+    Bgtype                       Color
+    Color                        clWhite
+    Image                        (None)
+    Source.Height                0
+    Source.Left                  0
+    Source.Top                   0
+    Source.Width                 0
+    OnActivate                   ''
+    OnCreate                     ''
+    OnRepeat                     ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+Scope
+    Name                         Scope0
+    Alias                        Scope0
+    Color                        clWhite
+    GraticuleColor               0x005100
+    GraticuleVisible             Yes
+    GraticuleXinc                10
+    GraticuleYinc                10
+    Height                       87
+    Left                         0
+    RefreshIncrement             1
+    Top                          184
+    Trace1Color                  LIME
+    Trace2Color                  BLUE
+    Trace3Color                  RED
+    Trace4Color                  FUCHSIA
+    Traces                       1
+    Width                        480
+    Xmag                         0
+    Yamp                         100
+    YLine                        60
+    YLineColor                   YELLOW
+    YLineVisible                 Yes
+    Yoffset                      0
+end
+LedDigits
+    Name                         Leddigits0
+    Alias                        Leddigits0
+    Color                        clWhite
+    Decimals                     0
+    Digits                       3
+    Height                       39
+    LeadingZero                  Yes
+    Left                         15
+    OutlineColor                 clWhite
+    Palette.High                 0x0A03FF
+    Palette.Low                  clWhite
+    Top                          114
+    Width                        80
+    OnChanged                    ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+UserButton
+    Name                         Userbutton1
+    Alias                        Userbutton1
+    Height                       38
+    Images                       x.PNG
+    Left                         432
+    Matrix                       -1
+    Momentary                    Yes
+    Stretch                      Yes
+    Top                          12
+    Width                        40
+    OnChanged                    Form1Activate
+end
+StaticText
+    Name                         Statictext1
+    Alias                        Statictext1
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'Reel Speed (In/min)'
+    Color                        BLACK
+    Font.Color                   BLACK
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    14
+    Font.Style                   []
+    Height                       23
+    Left                         7
+    Top                          86
+    Transparent                  Yes
+    Width                        171
+    WordWrap                     Yes
+end
+StaticText
+    Name                         Statictext2
+    Alias                        Statictext2
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'Counter Signal'
+    Color                        BLACK
+    Font.Color                   BLACK
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    14
+    Font.Style                   []
+    Height                       23
+    Left                         7
+    Top                          161
+    Transparent                  Yes
+    Width                        123
+    WordWrap                     Yes
+end
+Sounds
+    Name                         Sounds0
+    Alias                        Sounds0
+    WavFiles                     ''
+    OnPlayingChanged             ''
+    OnVolumeChanged              ''
+end
+Rectangle
+    Name                         Rectangle2
+    Alias                        Rectangle2
+    Color                        0x002D2D
+    Filled                       Yes
+    Height                       6
+    Left                         4
+    Outlined                     Yes
+    OutlineColor                 WHITE
+    Pattern                      Fine
+    Top                          60
+    Width                        417
+end
+StaticText
+    Name                         Statictext6
+    Alias                        Statictext6
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'UART Demo'
+    Color                        BLACK
+    Font.Color                   0x0B1A0B
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    28
+    Font.Style                   []
+    Height                       45
+    Left                         28
+    Top                          8
+    Transparent                  Yes
+    Width                        198
+    WordWrap                     Yes
+end
+PinInput
+    Name                         PinInput0
+    Alias                        PinInput0
+    IdleState                    Low
+    Pin                          PA0
+    OnChanged                    Userled0Set
+end
+PinOutput
+    Name                         PinOutput0
+    Alias                        PinOutput0
+    IdleState                    Low
+    PulseDuration                10
+    Pin                          PA0
+    OnChanged                    ''
+end
+StaticText
+    Name                         Statictext7
+    Alias                        Statictext7
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'Change Speed'
+    Color                        BLACK
+    Font.Color                   BLACK
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    14
+    Font.Style                   []
+    Height                       23
+    Left                         267
+    Top                          88
+    Transparent                  Yes
+    Width                        123
+    WordWrap                     Yes
+end
+AniButton
+    Name                         Anibutton0
+    Alias                        Anibutton0
+    Height                       34
+    Images                       'plus _large.PNG\nplus.PNG'
+    Interval                     100
+    Left                         276
+    Matrix                       -1
+    Momentary                    No
+    Stretch                      No
+    Top                          120
+    Width                        32
+    OnChanged                    'Report Message'
+end
+AniButton
+    Name                         Anibutton1
+    Alias                        Anibutton1
+    Height                       42
+    Images                       minus.PNG\nminus_red.PNG
+    Interval                     100
+    Left                         344
+    Matrix                       -1
+    Momentary                    No
+    Stretch                      No
+    Top                          120
+    Width                        53
+    OnChanged                    'Report Message'
+end
+Form
+    Name                         Form1
+    Alias                        Form1
+    Bgtype                       Color
+    Color                        clWhite
+    Image                        start.PNG
+    Source.Height                172
+    Source.Left                  0
+    Source.Top                   0
+    Source.Width                 214
+    OnActivate                   ''
+    OnCreate                     ''
+    OnRepeat                     ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+UserButton
+    Name                         Userbutton0
+    Alias                        Userbutton0
+    Height                       109
+    Images                       start.PNG
+    Left                         28
+    Matrix                       -1
+    Momentary                    Yes
+    Stretch                      Yes
+    Top                          68
+    Width                        141
+    OnChanged                    Form0Activate
+end
+StaticText
+    Name                         Statictext0
+    Alias                        Statictext0
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'Demo Menu'
+    Color                        BLACK
+    Font.Color                   0x0B1A0B
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    28
+    Font.Style                   []
+    Height                       50
+    Left                         28
+    Top                          8
+    Transparent                  Yes
+    Width                        220
+    WordWrap                     Yes
+end
+Rectangle
+    Name                         Rectangle0
+    Alias                        Rectangle0
+    Color                        0x002D2D
+    Filled                       Yes
+    Height                       6
+    Left                         4
+    Outlined                     Yes
+    OutlineColor                 WHITE
+    Pattern                      Fine
+    Top                          60
+    Width                        417
+end
+UserButton
+    Name                         Userbutton2
+    Alias                        Userbutton2
+    Height                       64
+    Images                       settings.PNG
+    Left                         60
+    Matrix                       -1
+    Momentary                    Yes
+    Stretch                      No
+    Top                          188
+    Width                        73
+    OnChanged                    Form2Activate
+end
+UserButton
+    Name                         Userbutton3
+    Alias                        Userbutton3
+    Height                       65
+    Images                       menuItem1.PNG
+    Left                         252
+    Matrix                       -1
+    Momentary                    Yes
+    Stretch                      No
+    Top                          92
+    Width                        75
+    OnChanged                    ''
+end
+Form
+    Name                         Form2
+    Alias                        Form2
+    Bgtype                       Color
+    Color                        clWhite
+    Image                        (None)
+    Source.Height                0
+    Source.Left                  0
+    Source.Top                   0
+    Source.Width                 0
+    OnActivate                   ''
+    OnCreate                     ''
+    OnRepeat                     ''
+    OnTouchMoving                ''
+    OnTouchPressed               ''
+    OnTouchReleased              ''
+end
+UserButton
+    Name                         Userbutton4
+    Alias                        Userbutton4
+    Height                       73
+    Images                       menuItem2.PNG
+    Left                         68
+    Matrix                       -1
+    Momentary                    Yes
+    Stretch                      No
+    Top                          144
+    Width                        73
+    OnChanged                    PinOutput0Set
+end
+UserButton
+    Name                         Userbutton5
+    Alias                        Userbutton5
+    Height                       38
+    Images                       x.PNG
+    Left                         428
+    Matrix                       -1
+    Momentary                    Yes
+    Stretch                      Yes
+    Top                          8
+    Width                        40
+    OnChanged                    Form1Activate
+end
+StaticText
+    Name                         Statictext3
+    Alias                        Statictext3
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      Buzzer
+    Color                        BLACK
+    Font.Color                   BLACK
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    14
+    Font.Style                   []
+    Height                       23
+    Left                         76
+    Top                          104
+    Transparent                  Yes
+    Width                        55
+    WordWrap                     Yes
+end
+StaticText
+    Name                         Statictext4
+    Alias                        Statictext4
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'External Button'
+    Color                        BLACK
+    Font.Color                   BLACK
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    14
+    Font.Style                   []
+    Height                       35
+    Left                         244
+    Top                          104
+    Transparent                  Yes
+    Width                        130
+    WordWrap                     Yes
+end
+UserLed
+    Name                         Userled0
+    Alias                        Userled0
+    Active                       No
+    Bevel.BorderColor            clBtnFace
+    Bevel.BorderWidth            0
+    Bevel.InnerColor             clBtnFace
+    Bevel.InnerHighlight         clLime
+    Bevel.InnerOutline           None
+    Bevel.InnerShadow            0x005100
+    Bevel.InnerSpace             1
+    Bevel.InnerStyle             None
+    Bevel.Innerwidth             1
+    Bevel.OuterColor             clBtnFace
+    Bevel.OuterHighlight         clBtnHighlight
+    Bevel.OuterOutline           Outer
+    Bevel.OuterShadow            clBtnShadow
+    Bevel.OuterSpace             0
+    Bevel.OuterStyle             Raised
+    Bevel.Outerwidth             1
+    Bevel.Visible                Yes
+    Height                       46
+    Left                         248
+    OutlineColor                 BLACK
+    OutlineWidth                 0
+    PaletteEx.High1              clRed
+    PaletteEx.High2              BLACK
+    PaletteEx.Low1               0x000051
+    PaletteEx.Low2               BLACK
+    Top                          160
+    Width                        126
+    OnChanged                    ''
+end
+Rectangle
+    Name                         Rectangle1
+    Alias                        Rectangle1
+    Color                        0x002D2D
+    Filled                       Yes
+    Height                       6
+    Left                         4
+    Outlined                     Yes
+    OutlineColor                 WHITE
+    Pattern                      Fine
+    Top                          60
+    Width                        417
+end
+StaticText
+    Name                         Statictext5
+    Alias                        Statictext5
+    Alignment                    Left
+    AutoSize                     Yes
+    Caption                      'I/O Demo'
+    Color                        BLACK
+    Font.Color                   0x0B1A0B
+    Font.Effects                 []
+    Font.Name                    Tahoma
+    Font.Size                    28
+    Font.Style                   []
+    Height                       45
+    Left                         28
+    Top                          8
+    Transparent                  Yes
+    Width                        161
+    WordWrap                     Yes
+end
